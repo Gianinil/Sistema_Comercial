@@ -87,6 +87,20 @@ public class Database
                 Status TEXT NOT NULL
             );";
             new SqliteCommand(sqlPagar, conn).ExecuteNonQuery();
+
+            try
+            {
+                string sqlAlterCaixa = "ALTER TABLE Caixa ADD COLUMN Cliente TEXT;";
+                new SqliteCommand(sqlAlterCaixa, conn).ExecuteNonQuery();
+            }
+            catch { }
+
+            try
+            {
+                string sqlAlterVenda = "ALTER TABLE Vendas ADD COLUMN ClienteId INTEGER;";
+                new SqliteCommand(sqlAlterVenda, conn).ExecuteNonQuery();
+            }
+            catch { }
         }
     }
 }

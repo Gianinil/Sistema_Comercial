@@ -87,9 +87,6 @@ namespace SistemaComercial
                 cmbProduto.ValueMember = "Id";
             }
         }
-
-
-
         private void btnVender_Click(object sender, EventArgs e)
         {
             try
@@ -97,6 +94,13 @@ namespace SistemaComercial
                 if (cmbProduto.SelectedValue == null)
                 {
                     MessageBox.Show("Selecione um produto.");
+                    return;
+                }
+
+                // 🔥 NOVO: validar cliente
+                if (cmbCliente.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Selecione um cliente.");
                     return;
                 }
 
@@ -114,6 +118,10 @@ namespace SistemaComercial
 
                 string metodo = cbMetodoPagamento.SelectedItem.ToString();
                 int produtoId = (int)cmbProduto.SelectedValue;
+
+                // 🔥 NOVO: pegar cliente
+                int clienteId = (int)cmbCliente.SelectedValue;
+                string clienteNome = cmbCliente.Text;
 
                 using (var conn = Database.GetConnection())
                 {
@@ -137,12 +145,14 @@ namespace SistemaComercial
                     cmdAtualizar.Parameters.AddWithValue("@id", produtoId);
                     cmdAtualizar.ExecuteNonQuery();
 
+                    // 🔥 ALTERADO: agora salva cliente na venda
                     string sqlVenda = @"INSERT INTO Vendas 
-                        (ProdutoId, Quantidade, DataVenda, MetodoPagamento) 
-                        VALUES (@produtoId, @quantidade, @data, @metodo)";
+                (ProdutoId, ClienteId, Quantidade, DataVenda, MetodoPagamento) 
+                VALUES (@produtoId, @clienteId, @quantidade, @data, @metodo)";
 
                     var cmdVenda = new SqliteCommand(sqlVenda, conn);
                     cmdVenda.Parameters.AddWithValue("@produtoId", produtoId);
+                    cmdVenda.Parameters.AddWithValue("@clienteId", clienteId); // 🔥 NOVO
                     cmdVenda.Parameters.AddWithValue("@quantidade", quantidade);
                     cmdVenda.Parameters.AddWithValue("@data", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     cmdVenda.Parameters.AddWithValue("@metodo", metodo);
@@ -155,9 +165,10 @@ namespace SistemaComercial
                     decimal precoUnitario = Convert.ToDecimal(cmdPreco.ExecuteScalar());
                     decimal totalVenda = precoUnitario * quantidade;
 
+                    // 🔥 ALTERADO: agora salva cliente no caixa
                     string sqlCaixa = @"INSERT INTO Caixa 
-                        (Tipo, Valor, Descricao, DataMovimento, MetodoPagamento)
-                        VALUES (@tipo, @valor, @descricao, @data, @metodo)";
+                (Tipo, Valor, Descricao, DataMovimento, MetodoPagamento, Cliente)
+                VALUES (@tipo, @valor, @descricao, @data, @metodo, @cliente)";
 
                     var cmdCaixa = new SqliteCommand(sqlCaixa, conn);
                     cmdCaixa.Parameters.AddWithValue("@tipo", "Entrada");
@@ -165,12 +176,12 @@ namespace SistemaComercial
                     cmdCaixa.Parameters.AddWithValue("@descricao", "Venda de produto");
                     cmdCaixa.Parameters.AddWithValue("@data", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     cmdCaixa.Parameters.AddWithValue("@metodo", metodo);
+                    cmdCaixa.Parameters.AddWithValue("@cliente", clienteNome); // 🔥 NOVO
                     cmdCaixa.ExecuteNonQuery();
                 }
 
                 MessageBox.Show("Venda realizada com sucesso!");
                 CarregarProdutos();
-
             }
             catch (Exception ex)
             {

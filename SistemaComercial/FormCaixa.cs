@@ -32,7 +32,7 @@ namespace SistemaComercial
             {
                 conn.Open();
 
-                string sql = "SELECT Tipo, Valor, Descricao, DataMovimento, MetodoPagamento FROM Caixa ORDER BY DataMovimento DESC";
+                string sql = "SELECT Cliente, Tipo, Valor, Descricao, DataMovimento, MetodoPagamento FROM Caixa ORDER BY DataMovimento DESC";
 
                 var cmd = new SqliteCommand(sql, conn);
                 var reader = cmd.ExecuteReader();
