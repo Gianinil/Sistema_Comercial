@@ -32,6 +32,9 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             panelMenu = new Panel();
+            btnContasReceber = new Button();
+            btnContasPagar = new Button();
+            btnClientes = new Button();
             label1 = new Label();
             btnProdutos = new Button();
             btnVendas = new Button();
@@ -48,6 +51,9 @@
             // panelMenu
             // 
             panelMenu.BackColor = Color.FromArgb(250, 250, 250);
+            panelMenu.Controls.Add(btnContasReceber);
+            panelMenu.Controls.Add(btnContasPagar);
+            panelMenu.Controls.Add(btnClientes);
             panelMenu.Controls.Add(label1);
             panelMenu.Controls.Add(btnProdutos);
             panelMenu.Controls.Add(btnVendas);
@@ -59,6 +65,57 @@
             panelMenu.Size = new Size(813, 512);
             panelMenu.TabIndex = 4;
             panelMenu.Paint += panelMenu_Paint;
+            // 
+            // btnContasReceber
+            // 
+            btnContasReceber.BackColor = Color.FromArgb(20, 70, 140);
+            btnContasReceber.Cursor = Cursors.Hand;
+            btnContasReceber.FlatAppearance.BorderSize = 0;
+            btnContasReceber.FlatStyle = FlatStyle.Flat;
+            btnContasReceber.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            btnContasReceber.ForeColor = Color.White;
+            btnContasReceber.Location = new Point(411, 312);
+            btnContasReceber.Margin = new Padding(30);
+            btnContasReceber.Name = "btnContasReceber";
+            btnContasReceber.Size = new Size(160, 45);
+            btnContasReceber.TabIndex = 7;
+            btnContasReceber.Text = "CONTAS A RECEBER";
+            btnContasReceber.UseVisualStyleBackColor = false;
+            btnContasReceber.Click += btnContasReceber_Click;
+            // 
+            // btnContasPagar
+            // 
+            btnContasPagar.BackColor = Color.FromArgb(20, 70, 140);
+            btnContasPagar.Cursor = Cursors.Hand;
+            btnContasPagar.FlatAppearance.BorderSize = 0;
+            btnContasPagar.FlatStyle = FlatStyle.Flat;
+            btnContasPagar.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            btnContasPagar.ForeColor = Color.White;
+            btnContasPagar.Location = new Point(411, 369);
+            btnContasPagar.Margin = new Padding(30);
+            btnContasPagar.Name = "btnContasPagar";
+            btnContasPagar.Size = new Size(160, 60);
+            btnContasPagar.TabIndex = 6;
+            btnContasPagar.Text = "CONTAS A PAGAR";
+            btnContasPagar.UseVisualStyleBackColor = false;
+            btnContasPagar.Click += btnContasPagar_Click;
+            // 
+            // btnClientes
+            // 
+            btnClientes.BackColor = Color.FromArgb(20, 70, 140);
+            btnClientes.Cursor = Cursors.Hand;
+            btnClientes.FlatAppearance.BorderSize = 0;
+            btnClientes.FlatStyle = FlatStyle.Flat;
+            btnClientes.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            btnClientes.ForeColor = Color.White;
+            btnClientes.Location = new Point(225, 369);
+            btnClientes.Margin = new Padding(30);
+            btnClientes.Name = "btnClientes";
+            btnClientes.Size = new Size(160, 60);
+            btnClientes.TabIndex = 5;
+            btnClientes.Text = "CADASTRO DE CLIENTES";
+            btnClientes.UseVisualStyleBackColor = false;
+            btnClientes.Click += btnClientes_Click;
             // 
             // label1
             // 
@@ -117,7 +174,7 @@
             btnSair.FlatStyle = FlatStyle.Flat;
             btnSair.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             btnSair.ForeColor = Color.White;
-            btnSair.Location = new Point(411, 312);
+            btnSair.Location = new Point(322, 445);
             btnSair.Margin = new Padding(30);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(160, 45);
@@ -222,5 +279,8 @@
         private Panel panelHeader;
         private Label lblSistema;
         private Label label2;
+        private Button btnClientes;
+        private Button btnContasReceber;
+        private Button btnContasPagar;
     }
 }

@@ -52,6 +52,41 @@ public class Database
                 MetodoPagamento TEXT NOT NULL
             );";
             new SqliteCommand(sqlCaixa, conn).ExecuteNonQuery();
+            
+            // CRIA CLIENTES SE NÃO EXISTIR
+            string sqlClientes = @"
+            CREATE TABLE IF NOT EXISTS Clientes (
+                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                Nome TEXT NOT NULL,
+                CpfCnpj TEXT,
+                Telefone TEXT,
+                Email TEXT,
+                Endereco TEXT
+            );";
+            new SqliteCommand(sqlClientes, conn).ExecuteNonQuery();
+
+            // CONTAS A RECEBER
+            string sqlReceber = @"
+            CREATE TABLE IF NOT EXISTS ContasReceber (
+                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                Cliente TEXT NOT NULL,
+                Valor REAL NOT NULL,
+                Data TEXT NOT NULL,
+                Status TEXT NOT NULL
+            );";
+            new SqliteCommand(sqlReceber, conn).ExecuteNonQuery();
+
+
+            // CONTAS A PAGAR
+            string sqlPagar = @"
+            CREATE TABLE IF NOT EXISTS ContasPagar (
+                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                Fornecedor TEXT NOT NULL,
+                Valor REAL NOT NULL,
+                Data TEXT NOT NULL,
+                Status TEXT NOT NULL
+            );";
+            new SqliteCommand(sqlPagar, conn).ExecuteNonQuery();
         }
     }
 }

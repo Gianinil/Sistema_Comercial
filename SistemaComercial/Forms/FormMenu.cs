@@ -14,19 +14,19 @@ namespace SistemaComercial.Forms
     public partial class FormMenu : Form
 
     {
-            private GraphicsPath GetRoundedRectangle(Rectangle rect, int radius)
-    {
-        GraphicsPath path = new GraphicsPath();
-        int diameter = radius * 2;
+        private GraphicsPath GetRoundedRectangle(Rectangle rect, int radius)
+        {
+            GraphicsPath path = new GraphicsPath();
+            int diameter = radius * 2;
 
-        path.AddArc(rect.X, rect.Y, diameter, diameter, 180, 90);
-        path.AddArc(rect.Right - diameter, rect.Y, diameter, diameter, 270, 90);
-        path.AddArc(rect.Right - diameter, rect.Bottom - diameter, diameter, diameter, 0, 90);
-        path.AddArc(rect.X, rect.Bottom - diameter, diameter, diameter, 90, 90);
+            path.AddArc(rect.X, rect.Y, diameter, diameter, 180, 90);
+            path.AddArc(rect.Right - diameter, rect.Y, diameter, diameter, 270, 90);
+            path.AddArc(rect.Right - diameter, rect.Bottom - diameter, diameter, diameter, 0, 90);
+            path.AddArc(rect.X, rect.Bottom - diameter, diameter, diameter, 90, 90);
 
-        path.CloseFigure();
-        return path;
-    }
+            path.CloseFigure();
+            return path;
+        }
 
         int fadeAlpha = 0;
         System.Windows.Forms.Timer fadeTimer = new System.Windows.Forms.Timer();
@@ -162,7 +162,25 @@ namespace SistemaComercial.Forms
 
         private void FormMenu_Paint(object sender, PaintEventArgs e)
         {
-        
+
+        }
+
+        private void btnClientes_Click(object sender, EventArgs e)
+        {
+            FormClientes tela = new FormClientes();
+            tela.Show();
+        }
+
+        private void btnContasPagar_Click(object sender, EventArgs e)
+        {
+            FormContasPagar tela = new FormContasPagar();
+            tela.Show();
+        }
+
+        private void btnContasReceber_Click(object sender, EventArgs e)
+        {
+            FormContasReceber tela = new FormContasReceber();
+            tela.Show();
         }
 
     }
