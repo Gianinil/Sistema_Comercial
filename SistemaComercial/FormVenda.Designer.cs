@@ -38,19 +38,22 @@
             Quantidade = new Label();
             label1 = new Label();
             cbMetodoPagamento = new ComboBox();
+            cmbCliente = new ComboBox();
+            label2 = new Label();
             SuspendLayout();
             // 
             // cmbProduto
             // 
             cmbProduto.FormattingEnabled = true;
-            cmbProduto.Location = new Point(281, 107);
+            cmbProduto.Location = new Point(281, 150);
             cmbProduto.Name = "cmbProduto";
             cmbProduto.Size = new Size(232, 23);
             cmbProduto.TabIndex = 0;
+            cmbProduto.SelectedIndexChanged += cmbProduto_SelectedIndexChanged;
             // 
             // txtQuantidade
             // 
-            txtQuantidade.Location = new Point(281, 163);
+            txtQuantidade.Location = new Point(281, 206);
             txtQuantidade.Name = "txtQuantidade";
             txtQuantidade.Size = new Size(232, 23);
             txtQuantidade.TabIndex = 1;
@@ -63,7 +66,7 @@
             btnVender.FlatStyle = FlatStyle.Flat;
             btnVender.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             btnVender.ForeColor = SystemColors.ControlLightLight;
-            btnVender.Location = new Point(281, 288);
+            btnVender.Location = new Point(281, 331);
             btnVender.Name = "btnVender";
             btnVender.Size = new Size(113, 34);
             btnVender.TabIndex = 2;
@@ -79,7 +82,7 @@
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             btnCancelar.ForeColor = SystemColors.ControlLightLight;
-            btnCancelar.Location = new Point(400, 288);
+            btnCancelar.Location = new Point(400, 331);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(113, 34);
             btnCancelar.TabIndex = 3;
@@ -98,7 +101,7 @@
             // 
             Produto.AutoSize = true;
             Produto.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            Produto.Location = new Point(281, 87);
+            Produto.Location = new Point(281, 130);
             Produto.Name = "Produto";
             Produto.Size = new Size(58, 17);
             Produto.TabIndex = 4;
@@ -108,7 +111,7 @@
             // 
             Quantidade.AutoSize = true;
             Quantidade.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            Quantidade.Location = new Point(281, 143);
+            Quantidade.Location = new Point(281, 186);
             Quantidade.Name = "Quantidade";
             Quantidade.Size = new Size(79, 17);
             Quantidade.TabIndex = 5;
@@ -118,7 +121,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.Location = new Point(281, 205);
+            label1.Location = new Point(281, 248);
             label1.Name = "label1";
             label1.Size = new Size(149, 17);
             label1.TabIndex = 6;
@@ -128,10 +131,30 @@
             // 
             cbMetodoPagamento.DropDownStyle = ComboBoxStyle.DropDownList;
             cbMetodoPagamento.FormattingEnabled = true;
-            cbMetodoPagamento.Location = new Point(281, 225);
+            cbMetodoPagamento.Location = new Point(281, 268);
             cbMetodoPagamento.Name = "cbMetodoPagamento";
             cbMetodoPagamento.Size = new Size(232, 23);
             cbMetodoPagamento.TabIndex = 7;
+            // 
+            // cmbCliente
+            // 
+            cmbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCliente.FormattingEnabled = true;
+            cmbCliente.Location = new Point(281, 104);
+            cmbCliente.Name = "cmbCliente";
+            cmbCliente.Size = new Size(232, 23);
+            cmbCliente.TabIndex = 9;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.Location = new Point(281, 84);
+            label2.Name = "label2";
+            label2.Size = new Size(49, 17);
+            label2.TabIndex = 8;
+            label2.Text = "Cliente";
+            label2.Click += label2_Click;
             // 
             // FormVenda
             // 
@@ -139,6 +162,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(224, 224, 224);
             ClientSize = new Size(824, 487);
+            Controls.Add(cmbCliente);
+            Controls.Add(label2);
             Controls.Add(cbMetodoPagamento);
             Controls.Add(label1);
             Controls.Add(Quantidade);
@@ -168,5 +193,7 @@
         private Label Quantidade;
         private Label label1;
         private ComboBox cbMetodoPagamento;
+        private ComboBox cmbCliente;
+        private Label label2;
     }
 }

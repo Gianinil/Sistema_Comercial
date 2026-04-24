@@ -17,14 +17,48 @@ namespace SistemaComercial
         private void FormVenda_Load(object sender, EventArgs e)
         {
             CarregarProdutos();
+            CarregarClientes();
 
             cbMetodoPagamento.Items.Add("Dinheiro");
             cbMetodoPagamento.Items.Add("Cartão Débito");
             cbMetodoPagamento.Items.Add("Cartão Crédito");
             cbMetodoPagamento.Items.Add("Pix");
             cbMetodoPagamento.SelectedIndex = 0;
+            cmbCliente.SelectedIndex = -1;
+            cmbProduto.SelectedIndex = -1;
 
 
+        }
+        public class Cliente
+        {
+            public int Id { get; set; }
+            public string Nome { get; set; }
+        }
+        private void CarregarClientes()
+        {
+            using (var conn = Database.GetConnection())
+            {
+                conn.Open();
+
+                string sql = "SELECT Id, Nome FROM Clientes";
+                var cmd = new SqliteCommand(sql, conn);
+                var reader = cmd.ExecuteReader();
+
+                var lista = new List<Cliente>();
+
+                while (reader.Read())
+                {
+                    lista.Add(new Cliente
+                    {
+                        Id = reader.GetInt32(0),
+                        Nome = reader.GetString(1)
+                    });
+                }
+
+                cmbCliente.DataSource = lista;
+                cmbCliente.DisplayMember = "Nome";
+                cmbCliente.ValueMember = "Id";
+            }
         }
 
         private void CarregarProdutos()
@@ -147,6 +181,16 @@ namespace SistemaComercial
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbProduto_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
