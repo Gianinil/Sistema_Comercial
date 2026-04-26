@@ -69,6 +69,7 @@
             // 
             // panelBotoes
             // 
+            panelBotoes.BackColor = SystemColors.Control;
             panelBotoes.Controls.Add(Excluir);
             panelBotoes.Controls.Add(Editar);
             panelBotoes.Controls.Add(Novo);
@@ -81,7 +82,7 @@
             // 
             // Excluir
             // 
-            Excluir.BackColor = Color.FromArgb(20, 70, 140);
+            Excluir.BackColor = Color.FromArgb(5, 1, 71);
             Excluir.Cursor = Cursors.Hand;
             Excluir.FlatAppearance.BorderSize = 0;
             Excluir.FlatStyle = FlatStyle.Flat;
@@ -97,7 +98,7 @@
             // 
             // Editar
             // 
-            Editar.BackColor = Color.FromArgb(20, 70, 140);
+            Editar.BackColor = Color.FromArgb(5, 1, 71);
             Editar.Cursor = Cursors.Hand;
             Editar.FlatAppearance.BorderSize = 0;
             Editar.FlatStyle = FlatStyle.Flat;
@@ -113,7 +114,7 @@
             // 
             // Novo
             // 
-            Novo.BackColor = Color.FromArgb(20, 70, 140);
+            Novo.BackColor = Color.FromArgb(5, 1, 71);
             Novo.Cursor = Cursors.Hand;
             Novo.FlatAppearance.BorderSize = 0;
             Novo.FlatStyle = FlatStyle.Flat;
@@ -141,15 +142,15 @@
             label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(889, 577);
             label1.Name = "label1";
-            label1.Size = new Size(102, 17);
+            label1.Size = new Size(109, 17);
             label1.TabIndex = 3;
-            label1.Text = "Buscar produto";
+            label1.Text = "Buscar produto: ";
             // 
             // FormProdutos
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(224, 224, 224);
+            BackColor = SystemColors.Control;
             ClientSize = new Size(1233, 701);
             Controls.Add(label1);
             Controls.Add(txtBuscar);

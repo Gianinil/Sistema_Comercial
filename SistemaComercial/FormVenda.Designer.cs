@@ -40,6 +40,7 @@
             cbMetodoPagamento = new ComboBox();
             cmbCliente = new ComboBox();
             label2 = new Label();
+            panel1 = new Panel();
             SuspendLayout();
             // 
             // cmbProduto
@@ -60,7 +61,7 @@
             // 
             // btnVender
             // 
-            btnVender.BackColor = Color.FromArgb(20, 70, 140);
+            btnVender.BackColor = Color.FromArgb(5, 1, 71);
             btnVender.Cursor = Cursors.Hand;
             btnVender.FlatAppearance.BorderSize = 0;
             btnVender.FlatStyle = FlatStyle.Flat;
@@ -76,7 +77,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = Color.FromArgb(20, 70, 140);
+            btnCancelar.BackColor = Color.FromArgb(5, 1, 71);
             btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.FlatStyle = FlatStyle.Flat;
@@ -100,6 +101,7 @@
             // Produto
             // 
             Produto.AutoSize = true;
+            Produto.BackColor = SystemColors.Control;
             Produto.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             Produto.Location = new Point(281, 130);
             Produto.Name = "Produto";
@@ -110,6 +112,7 @@
             // Quantidade
             // 
             Quantidade.AutoSize = true;
+            Quantidade.BackColor = SystemColors.Control;
             Quantidade.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             Quantidade.Location = new Point(281, 186);
             Quantidade.Name = "Quantidade";
@@ -120,6 +123,7 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = SystemColors.Control;
             label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.Location = new Point(281, 248);
             label1.Name = "label1";
@@ -148,6 +152,7 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.BackColor = SystemColors.Control;
             label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.Location = new Point(281, 84);
             label2.Name = "label2";
@@ -155,6 +160,14 @@
             label2.TabIndex = 8;
             label2.Text = "Cliente";
             label2.Click += label2_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.Control;
+            panel1.Location = new Point(240, 58);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(312, 344);
+            panel1.TabIndex = 10;
             // 
             // FormVenda
             // 
@@ -172,12 +185,14 @@
             Controls.Add(btnVender);
             Controls.Add(txtQuantidade);
             Controls.Add(cmbProduto);
+            Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "FormVenda";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema Comercial";
             Load += FormVenda_Load;
+            Paint += FormVenda_Paint;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -195,5 +210,6 @@
         private ComboBox cbMetodoPagamento;
         private ComboBox cmbCliente;
         private Label label2;
+        private Panel panel1;
     }
 }

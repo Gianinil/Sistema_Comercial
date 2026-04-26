@@ -39,17 +39,19 @@
             btnCancelar = new Button();
             dtValidade = new DateTimePicker();
             label1 = new Label();
+            panel1 = new Panel();
             SuspendLayout();
             // 
             // Nome
             // 
             Nome.AutoSize = true;
+            Nome.BackColor = SystemColors.Control;
             Nome.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             Nome.Location = new Point(266, 75);
             Nome.Name = "Nome";
-            Nome.Size = new Size(45, 17);
+            Nome.Size = new Size(52, 17);
             Nome.TabIndex = 0;
-            Nome.Text = "Nome";
+            Nome.Text = "Nome: ";
             Nome.Click += Nome_Click;
             // 
             // txtNome
@@ -70,22 +72,24 @@
             // Preço
             // 
             Preço.AutoSize = true;
+            Preço.BackColor = SystemColors.Control;
             Preço.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             Preço.Location = new Point(268, 133);
             Preço.Name = "Preço";
-            Preço.Size = new Size(42, 17);
+            Preço.Size = new Size(49, 17);
             Preço.TabIndex = 4;
-            Preço.Text = "Preço";
+            Preço.Text = "Preço: ";
             // 
             // Quantidade
             // 
             Quantidade.AutoSize = true;
+            Quantidade.BackColor = SystemColors.Control;
             Quantidade.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             Quantidade.Location = new Point(268, 194);
             Quantidade.Name = "Quantidade";
-            Quantidade.Size = new Size(79, 17);
+            Quantidade.Size = new Size(86, 17);
             Quantidade.TabIndex = 6;
-            Quantidade.Text = "Quantidade";
+            Quantidade.Text = "Quantidade: ";
             // 
             // txtQuantidade
             // 
@@ -96,7 +100,7 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.BackColor = Color.FromArgb(20, 70, 140);
+            btnSalvar.BackColor = Color.FromArgb(5, 1, 71);
             btnSalvar.Cursor = Cursors.Hand;
             btnSalvar.FlatAppearance.BorderSize = 0;
             btnSalvar.FlatStyle = FlatStyle.Flat;
@@ -112,7 +116,7 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = Color.FromArgb(20, 70, 140);
+            btnCancelar.BackColor = Color.FromArgb(5, 1, 71);
             btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.FlatStyle = FlatStyle.Flat;
@@ -137,18 +141,27 @@
             // label1
             // 
             label1.AutoSize = true;
+            label1.BackColor = SystemColors.Control;
             label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
             label1.Location = new Point(268, 255);
             label1.Name = "label1";
-            label1.Size = new Size(58, 17);
+            label1.Size = new Size(65, 17);
             label1.TabIndex = 10;
-            label1.Text = "Validade";
+            label1.Text = "Validade: ";
+            // 
+            // panel1
+            // 
+            panel1.BackColor = SystemColors.Control;
+            panel1.Location = new Point(227, 49);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(319, 350);
+            panel1.TabIndex = 11;
             // 
             // FormCadastroProduto
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(224, 224, 224);
+            BackColor = Color.FromArgb(0, 0, 43);
             ClientSize = new Size(824, 487);
             Controls.Add(label1);
             Controls.Add(dtValidade);
@@ -160,11 +173,14 @@
             Controls.Add(txtPreco);
             Controls.Add(txtNome);
             Controls.Add(Nome);
+            Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "FormCadastroProduto";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema Comercial";
             Load += FormCadastroProduto_Load;
+            Paint += FormCadastroProduto_Paint;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -181,5 +197,6 @@
         private Button btnCancelar;
         private DateTimePicker dtValidade;
         private Label label1;
+        private Panel panel1;
     }
 }

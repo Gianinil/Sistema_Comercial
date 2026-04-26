@@ -71,8 +71,8 @@ namespace SistemaComercial
         {
             using (LinearGradientBrush brush = new LinearGradientBrush(
                 this.ClientRectangle,
-                Color.LightGray,
-                Color.White,
+                Color.FromArgb(0, 0, 43),
+                Color.FromArgb(0, 0, 23),
                 90F))
             {
                 e.Graphics.FillRectangle(brush, this.ClientRectangle);

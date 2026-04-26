@@ -3,6 +3,7 @@ using SistemaComercial.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 
 namespace SistemaComercial
@@ -202,6 +203,18 @@ namespace SistemaComercial
         private void cmbProduto_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void FormVenda_Paint(object sender, PaintEventArgs e)
+        {
+            using (LinearGradientBrush brush = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.FromArgb(9, 3, 90),
+                Color.FromArgb(0, 0, 23),
+                90F))
+            {
+                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+            }
         }
     }
 }

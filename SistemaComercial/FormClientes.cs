@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Text;
 using System.Windows.Forms;
 
@@ -57,6 +58,18 @@ namespace SistemaComercial
             txtTelefone.Clear();
             txtEmail.Clear();
             txtEndereco.Clear();
+        }
+
+        private void FormClientes_Paint(object sender, PaintEventArgs e)
+        {
+            using (LinearGradientBrush brush = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.FromArgb(9, 3, 90),
+                Color.FromArgb(0, 0, 23),
+                90F))
+            {
+                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+            }
         }
     }
 }

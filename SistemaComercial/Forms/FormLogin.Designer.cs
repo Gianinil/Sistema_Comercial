@@ -35,8 +35,8 @@
             txtSenha = new TextBox();
             btnEntrar = new Button();
             panelLogin = new Panel();
-            label3 = new Label();
             label4 = new Label();
+            label3 = new Label();
             panelLogin.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,7 +68,7 @@
             // 
             // btnEntrar
             // 
-            btnEntrar.BackColor = Color.FromArgb(20, 70, 140);
+            btnEntrar.BackColor = Color.FromArgb(9, 3, 90);
             btnEntrar.Cursor = Cursors.Hand;
             resources.ApplyResources(btnEntrar, "btnEntrar");
             btnEntrar.ForeColor = SystemColors.ControlLightLight;
@@ -90,23 +90,23 @@
             panelLogin.Name = "panelLogin";
             panelLogin.Paint += panelLogin_Paint;
             // 
-            // label3
-            // 
-            resources.ApplyResources(label3, "label3");
-            label3.ForeColor = Color.FromArgb(30, 30, 30);
-            label3.Name = "label3";
-            // 
             // label4
             // 
             resources.ApplyResources(label4, "label4");
             label4.BackColor = Color.White;
             label4.Name = "label4";
             // 
+            // label3
+            // 
+            resources.ApplyResources(label3, "label3");
+            label3.ForeColor = Color.FromArgb(30, 30, 30);
+            label3.Name = "label3";
+            // 
             // FormLogin
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(224, 224, 224);
+            BackColor = Color.FromArgb(0, 0, 43);
             Controls.Add(panelLogin);
             DoubleBuffered = true;
             MaximizeBox = false;
