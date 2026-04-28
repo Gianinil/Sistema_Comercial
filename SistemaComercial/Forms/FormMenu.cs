@@ -119,5 +119,10 @@ namespace SistemaComercial.Forms
         {
             lblData.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

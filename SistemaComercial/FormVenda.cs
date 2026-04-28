@@ -98,7 +98,7 @@ namespace SistemaComercial
                     return;
                 }
 
-                // 🔥 NOVO: validar cliente
+                //  NOVO: validar cliente
                 if (cmbCliente.SelectedIndex == -1)
                 {
                     MessageBox.Show("Selecione um cliente.");
@@ -120,7 +120,7 @@ namespace SistemaComercial
                 string metodo = cbMetodoPagamento.SelectedItem.ToString();
                 int produtoId = (int)cmbProduto.SelectedValue;
 
-                // 🔥 NOVO: pegar cliente
+                //  NOVO: pegar cliente
                 int clienteId = (int)cmbCliente.SelectedValue;
                 string clienteNome = cmbCliente.Text;
 
@@ -146,7 +146,7 @@ namespace SistemaComercial
                     cmdAtualizar.Parameters.AddWithValue("@id", produtoId);
                     cmdAtualizar.ExecuteNonQuery();
 
-                    // 🔥 ALTERADO: agora salva cliente na venda
+                    //  ALTERADO: agora salva cliente na venda
                     string sqlVenda = @"INSERT INTO Vendas 
                 (ProdutoId, ClienteId, Quantidade, DataVenda, MetodoPagamento) 
                 VALUES (@produtoId, @clienteId, @quantidade, @data, @metodo)";
@@ -215,6 +215,11 @@ namespace SistemaComercial
             {
                 e.Graphics.FillRectangle(brush, this.ClientRectangle);
             }
+        }
+
+        private void cbMetodoPagamento_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

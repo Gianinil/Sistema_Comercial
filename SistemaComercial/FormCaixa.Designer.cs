@@ -48,6 +48,7 @@
             dgvCaixa.Location = new Point(0, 0);
             dgvCaixa.Name = "dgvCaixa";
             dgvCaixa.ReadOnly = true;
+            dgvCaixa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCaixa.Size = new Size(1233, 576);
             dgvCaixa.TabIndex = 0;
             dgvCaixa.CellContentClick += dgvCaixa_CellContentClick;

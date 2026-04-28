@@ -38,6 +38,7 @@
             cbStatus = new ComboBox();
             btnSalvar = new Button();
             dgvReceber = new DataGridView();
+            btnReceber = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvReceber).BeginInit();
             SuspendLayout();
             // 
@@ -109,29 +110,55 @@
             // 
             // btnSalvar
             // 
+            btnSalvar.BackColor = Color.FromArgb(5, 1, 71);
+            btnSalvar.FlatStyle = FlatStyle.Flat;
+            btnSalvar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnSalvar.ForeColor = SystemColors.Control;
             btnSalvar.Location = new Point(603, 531);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(97, 36);
+            btnSalvar.Size = new Size(114, 41);
             btnSalvar.TabIndex = 8;
             btnSalvar.Text = "SALVAR";
-            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.UseVisualStyleBackColor = false;
             btnSalvar.Click += btnSalvar_Click;
             // 
             // dgvReceber
             // 
+            dgvReceber.AllowUserToAddRows = false;
+            dgvReceber.AllowUserToDeleteRows = false;
+            dgvReceber.AllowUserToResizeColumns = false;
+            dgvReceber.AllowUserToResizeRows = false;
+            dgvReceber.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvReceber.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvReceber.Dock = DockStyle.Top;
             dgvReceber.Location = new Point(0, 0);
             dgvReceber.Name = "dgvReceber";
+            dgvReceber.ReadOnly = true;
+            dgvReceber.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvReceber.Size = new Size(1166, 518);
             dgvReceber.TabIndex = 9;
             dgvReceber.CellContentClick += dgvReceber_CellContentClick;
+            // 
+            // btnReceber
+            // 
+            btnReceber.BackColor = Color.FromArgb(5, 1, 71);
+            btnReceber.FlatStyle = FlatStyle.Flat;
+            btnReceber.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnReceber.ForeColor = SystemColors.Control;
+            btnReceber.Location = new Point(1041, 529);
+            btnReceber.Name = "btnReceber";
+            btnReceber.Size = new Size(114, 41);
+            btnReceber.TabIndex = 10;
+            btnReceber.Text = "RECEBIDO";
+            btnReceber.UseVisualStyleBackColor = false;
+            btnReceber.Click += btnReceber_Click_1;
             // 
             // FormContasReceber
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1166, 647);
+            Controls.Add(btnReceber);
             Controls.Add(dgvReceber);
             Controls.Add(btnSalvar);
             Controls.Add(cbStatus);
@@ -163,5 +190,6 @@
         private ComboBox cbStatus;
         private Button btnSalvar;
         private DataGridView dgvReceber;
+        private Button btnReceber;
     }
 }

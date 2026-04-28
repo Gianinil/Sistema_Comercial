@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label1 = new Label();
             txtFornecedor = new TextBox();
             txtValor = new TextBox();
@@ -38,6 +39,7 @@
             label4 = new Label();
             btnSalvar = new Button();
             dgvPagar = new DataGridView();
+            btnPagar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvPagar).BeginInit();
             SuspendLayout();
             // 
@@ -97,6 +99,7 @@
             cbStatus.Name = "cbStatus";
             cbStatus.Size = new Size(121, 23);
             cbStatus.TabIndex = 6;
+            cbStatus.SelectedIndexChanged += cbStatus_SelectedIndexChanged;
             // 
             // label4
             // 
@@ -109,27 +112,61 @@
             // 
             // btnSalvar
             // 
-            btnSalvar.Location = new Point(658, 548);
+            btnSalvar.BackColor = Color.FromArgb(5, 1, 71);
+            btnSalvar.Cursor = Cursors.Hand;
+            btnSalvar.FlatStyle = FlatStyle.Flat;
+            btnSalvar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnSalvar.ForeColor = SystemColors.Control;
+            btnSalvar.Location = new Point(658, 552);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new Size(114, 41);
             btnSalvar.TabIndex = 8;
             btnSalvar.Text = "SALVAR";
-            btnSalvar.UseVisualStyleBackColor = true;
+            btnSalvar.UseVisualStyleBackColor = false;
+            btnSalvar.Click += btnSalvar_Click;
             // 
             // dgvPagar
             // 
+            dgvPagar.AllowUserToAddRows = false;
+            dgvPagar.AllowUserToDeleteRows = false;
+            dgvPagar.AllowUserToResizeColumns = false;
+            dgvPagar.AllowUserToResizeRows = false;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.TopCenter;
+            dgvPagar.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dgvPagar.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvPagar.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvPagar.Dock = DockStyle.Top;
             dgvPagar.Location = new Point(0, 0);
+            dgvPagar.MultiSelect = false;
             dgvPagar.Name = "dgvPagar";
+            dgvPagar.ReadOnly = true;
+            dgvPagar.RowHeadersVisible = false;
+            dgvPagar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPagar.Size = new Size(1269, 542);
             dgvPagar.TabIndex = 9;
+            dgvPagar.CellContentClick += dgvPagar_CellContentClick;
+            // 
+            // btnPagar
+            // 
+            btnPagar.BackColor = Color.FromArgb(5, 1, 71);
+            btnPagar.Cursor = Cursors.Hand;
+            btnPagar.FlatStyle = FlatStyle.Flat;
+            btnPagar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            btnPagar.ForeColor = SystemColors.Control;
+            btnPagar.Location = new Point(1144, 549);
+            btnPagar.Name = "btnPagar";
+            btnPagar.Size = new Size(114, 41);
+            btnPagar.TabIndex = 10;
+            btnPagar.Text = "PAGAR";
+            btnPagar.UseVisualStyleBackColor = false;
+            btnPagar.Click += btnPagar_Click;
             // 
             // FormContasPagar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1269, 663);
+            Controls.Add(btnPagar);
             Controls.Add(dgvPagar);
             Controls.Add(btnSalvar);
             Controls.Add(label4);
@@ -160,5 +197,6 @@
         private Label label4;
         private Button btnSalvar;
         private DataGridView dgvPagar;
+        private Button btnPagar;
     }
 }

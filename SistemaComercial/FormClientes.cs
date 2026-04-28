@@ -34,7 +34,7 @@ namespace SistemaComercial
                 conn.Open();
 
                 string sql = @"
-        INSERT INTO Clientes 
+        INSERT INTO Clientes
         (Nome, CpfCnpj, Telefone, Email, Endereco)
         VALUES (@nome, @cpf, @telefone, @email, @endereco)";
 

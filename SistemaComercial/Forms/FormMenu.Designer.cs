@@ -50,6 +50,7 @@
             timer1 = new System.Windows.Forms.Timer(components);
             lblData = new Label();
             timer2 = new System.Windows.Forms.Timer(components);
+            label3 = new Label();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -63,10 +64,13 @@
             btnContasReceber.FlatStyle = FlatStyle.Flat;
             btnContasReceber.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             btnContasReceber.ForeColor = Color.White;
+            btnContasReceber.Image = (Image)resources.GetObject("btnContasReceber.Image");
+            btnContasReceber.ImageAlign = ContentAlignment.MiddleLeft;
             btnContasReceber.Location = new Point(0, 286);
             btnContasReceber.Margin = new Padding(30);
             btnContasReceber.Name = "btnContasReceber";
-            btnContasReceber.Size = new Size(260, 65);
+            btnContasReceber.Padding = new Padding(10, 8, 10, 8);
+            btnContasReceber.Size = new Size(313, 65);
             btnContasReceber.TabIndex = 7;
             btnContasReceber.Text = "CONTAS A RECEBER";
             btnContasReceber.UseVisualStyleBackColor = false;
@@ -80,10 +84,13 @@
             btnContasPagar.FlatStyle = FlatStyle.Flat;
             btnContasPagar.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             btnContasPagar.ForeColor = Color.White;
+            btnContasPagar.Image = (Image)resources.GetObject("btnContasPagar.Image");
+            btnContasPagar.ImageAlign = ContentAlignment.MiddleLeft;
             btnContasPagar.Location = new Point(0, 416);
             btnContasPagar.Margin = new Padding(30);
             btnContasPagar.Name = "btnContasPagar";
-            btnContasPagar.Size = new Size(260, 65);
+            btnContasPagar.Padding = new Padding(10, 8, 10, 8);
+            btnContasPagar.Size = new Size(313, 65);
             btnContasPagar.TabIndex = 6;
             btnContasPagar.Text = "CONTAS A PAGAR";
             btnContasPagar.UseVisualStyleBackColor = false;
@@ -97,12 +104,16 @@
             btnClientes.FlatStyle = FlatStyle.Flat;
             btnClientes.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             btnClientes.ForeColor = Color.White;
+            btnClientes.Image = (Image)resources.GetObject("btnClientes.Image");
+            btnClientes.ImageAlign = ContentAlignment.MiddleLeft;
             btnClientes.Location = new Point(0, 481);
             btnClientes.Margin = new Padding(30);
             btnClientes.Name = "btnClientes";
-            btnClientes.Size = new Size(260, 65);
+            btnClientes.Padding = new Padding(16, 8, 16, 8);
+            btnClientes.Size = new Size(313, 65);
             btnClientes.TabIndex = 5;
-            btnClientes.Text = "CADASTRO DE CLIENTES";
+            btnClientes.Text = "     CADASTRO DE CLIENTES";
+            btnClientes.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnClientes.UseVisualStyleBackColor = false;
             btnClientes.Click += btnClientes_Click;
             // 
@@ -111,7 +122,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(0, 32);
+            label1.Location = new Point(30, 30);
             label1.Name = "label1";
             label1.Size = new Size(255, 37);
             label1.TabIndex = 4;
@@ -125,10 +136,13 @@
             btnProdutos.FlatStyle = FlatStyle.Flat;
             btnProdutos.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             btnProdutos.ForeColor = Color.White;
+            btnProdutos.Image = (Image)resources.GetObject("btnProdutos.Image");
+            btnProdutos.ImageAlign = ContentAlignment.MiddleLeft;
             btnProdutos.Location = new Point(0, 156);
             btnProdutos.Margin = new Padding(30);
             btnProdutos.Name = "btnProdutos";
-            btnProdutos.Size = new Size(260, 65);
+            btnProdutos.Padding = new Padding(10, 8, 10, 8);
+            btnProdutos.Size = new Size(313, 65);
             btnProdutos.TabIndex = 0;
             btnProdutos.Text = "PRODUTOS";
             btnProdutos.UseVisualStyleBackColor = false;
@@ -142,10 +156,13 @@
             btnVendas.FlatStyle = FlatStyle.Flat;
             btnVendas.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             btnVendas.ForeColor = Color.White;
+            btnVendas.Image = (Image)resources.GetObject("btnVendas.Image");
+            btnVendas.ImageAlign = ContentAlignment.MiddleLeft;
             btnVendas.Location = new Point(0, 221);
             btnVendas.Margin = new Padding(30);
             btnVendas.Name = "btnVendas";
-            btnVendas.Size = new Size(260, 65);
+            btnVendas.Padding = new Padding(16, 8, 16, 8);
+            btnVendas.Size = new Size(313, 65);
             btnVendas.TabIndex = 2;
             btnVendas.Text = "VENDAS";
             btnVendas.UseVisualStyleBackColor = false;
@@ -159,10 +176,11 @@
             btnSair.FlatStyle = FlatStyle.Flat;
             btnSair.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             btnSair.ForeColor = Color.White;
+            btnSair.ImageAlign = ContentAlignment.MiddleLeft;
             btnSair.Location = new Point(0, 898);
             btnSair.Margin = new Padding(30);
             btnSair.Name = "btnSair";
-            btnSair.Size = new Size(260, 65);
+            btnSair.Size = new Size(313, 65);
             btnSair.TabIndex = 1;
             btnSair.Text = "SAIR";
             btnSair.UseVisualStyleBackColor = false;
@@ -176,10 +194,13 @@
             btnCaixa.FlatStyle = FlatStyle.Flat;
             btnCaixa.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             btnCaixa.ForeColor = Color.White;
+            btnCaixa.Image = (Image)resources.GetObject("btnCaixa.Image");
+            btnCaixa.ImageAlign = ContentAlignment.MiddleLeft;
             btnCaixa.Location = new Point(0, 351);
             btnCaixa.Margin = new Padding(30);
             btnCaixa.Name = "btnCaixa";
-            btnCaixa.Size = new Size(260, 65);
+            btnCaixa.Padding = new Padding(16, 8, 16, 8);
+            btnCaixa.Size = new Size(313, 65);
             btnCaixa.TabIndex = 3;
             btnCaixa.Text = "CAIXA";
             btnCaixa.UseVisualStyleBackColor = false;
@@ -196,8 +217,9 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(260, 1003);
+            panel1.Size = new Size(313, 1003);
             panel1.TabIndex = 8;
+            panel1.Paint += panel1_Paint;
             // 
             // panel3
             // 
@@ -206,7 +228,7 @@
             panel3.Dock = DockStyle.Top;
             panel3.Location = new Point(0, 0);
             panel3.Name = "panel3";
-            panel3.Size = new Size(260, 100);
+            panel3.Size = new Size(313, 100);
             panel3.TabIndex = 0;
             // 
             // lblSistema
@@ -226,7 +248,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(1302, 40);
+            label2.Location = new Point(1249, 40);
             label2.Name = "label2";
             label2.Size = new Size(205, 21);
             label2.TabIndex = 1;
@@ -238,9 +260,9 @@
             panel2.Controls.Add(lblSistema);
             panel2.Controls.Add(label2);
             panel2.Dock = DockStyle.Top;
-            panel2.Location = new Point(260, 0);
+            panel2.Location = new Point(313, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1519, 100);
+            panel2.Size = new Size(1466, 100);
             panel2.TabIndex = 9;
             panel2.Paint += panel2_Paint;
             // 
@@ -249,7 +271,7 @@
             lblHora.AutoSize = true;
             lblHora.Font = new Font("Segoe UI", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblHora.ForeColor = SystemColors.ControlDarkDark;
-            lblHora.Location = new Point(804, 351);
+            lblHora.Location = new Point(856, 458);
             lblHora.Name = "lblHora";
             lblHora.Size = new Size(436, 128);
             lblHora.TabIndex = 10;
@@ -266,7 +288,7 @@
             lblData.AutoSize = true;
             lblData.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblData.ForeColor = SystemColors.ControlDarkDark;
-            lblData.Location = new Point(830, 592);
+            lblData.Location = new Point(882, 676);
             lblData.Name = "lblData";
             lblData.Size = new Size(389, 86);
             lblData.TabIndex = 11;
@@ -278,12 +300,24 @@
             timer2.Interval = 1000;
             timer2.Tick += timer2_Tick;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.ForeColor = SystemColors.ControlDarkDark;
+            label3.Location = new Point(787, 240);
+            label3.Name = "label3";
+            label3.Size = new Size(568, 128);
+            label3.TabIndex = 12;
+            label3.Text = "Bem vindo!";
+            // 
             // FormMenu
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ScrollBar;
             ClientSize = new Size(1779, 1003);
+            Controls.Add(label3);
             Controls.Add(lblData);
             Controls.Add(lblHora);
             Controls.Add(panel2);
@@ -333,5 +367,6 @@
         private System.Windows.Forms.Timer timer1;
         private Label lblData;
         private System.Windows.Forms.Timer timer2;
+        private Label label3;
     }
 }

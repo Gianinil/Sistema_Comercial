@@ -139,6 +139,7 @@
             cbMetodoPagamento.Name = "cbMetodoPagamento";
             cbMetodoPagamento.Size = new Size(232, 23);
             cbMetodoPagamento.TabIndex = 7;
+            cbMetodoPagamento.SelectedIndexChanged += cbMetodoPagamento_SelectedIndexChanged;
             // 
             // cmbCliente
             // 

@@ -52,7 +52,7 @@ public class Database
                 MetodoPagamento TEXT NOT NULL
             );";
             new SqliteCommand(sqlCaixa, conn).ExecuteNonQuery();
-            
+
             // CRIA CLIENTES SE NÃO EXISTIR
             string sqlClientes = @"
             CREATE TABLE IF NOT EXISTS Clientes (
