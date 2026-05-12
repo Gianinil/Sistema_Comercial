@@ -65,6 +65,18 @@ public class Database
             );";
             new SqliteCommand(sqlClientes, conn).ExecuteNonQuery();
 
+            //FORNECEDOR
+            string sqlFornecedor = @"
+            CREATE TABLE IF NOT EXISTS Fornecedor(
+            ID INTEGER PRIMARY KEY AUTOINCREMENT,
+            Nome TEXT NOT NULL,
+            Cnpj TEXT,
+            Telefone TEXT,
+            Email TEXT
+            Endereco TEXT
+            
+            );";
+
             // CONTAS A RECEBER
             string sqlReceber = @"
             CREATE TABLE IF NOT EXISTS ContasReceber (
@@ -99,6 +111,13 @@ public class Database
             {
                 string sqlAlterVenda = "ALTER TABLE Vendas ADD COLUMN ClienteId INTEGER;";
                 new SqliteCommand(sqlAlterVenda, conn).ExecuteNonQuery();
+            }
+            catch { }
+
+            try
+            {
+                string sqlAlterCaixa = "ALTER TABLE Caixa ADD COLUMN Fornecedor TEXT;";
+                new SqliteCommand(sqlAlterCaixa, conn).ExecuteNonQuery();
             }
             catch { }
         }

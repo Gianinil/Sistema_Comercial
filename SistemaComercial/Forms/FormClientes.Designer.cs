@@ -66,9 +66,9 @@
             label2.BackColor = SystemColors.Control;
             label2.Location = new Point(291, 128);
             label2.Name = "label2";
-            label2.Size = new Size(66, 15);
+            label2.Size = new Size(34, 15);
             label2.TabIndex = 3;
-            label2.Text = "CPF/CNPJ: ";
+            label2.Text = "CPF: ";
             // 
             // txtCpf
             // 

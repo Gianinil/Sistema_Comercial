@@ -81,10 +81,9 @@ namespace SistemaComercial.Forms
         {
         }
 
-        private void btnClientes_Click(object sender, EventArgs e)
+        private void btnFornecedor_Click(object sender, EventArgs e)
         {
-            FormClientes tela = new FormClientes();
-            tela.Show();
+
         }
 
         private void btnContasPagar_Click(object sender, EventArgs e)
@@ -123,6 +122,12 @@ namespace SistemaComercial.Forms
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void btnFornecedor_Click_1(object sender, EventArgs e)
+        {
+            FormCadastroFornecedores tela = new FormCadastroFornecedores();
+            tela.ShowDialog();
         }
     }
 }

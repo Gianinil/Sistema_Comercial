@@ -45,6 +45,8 @@
             // 
             // cmbProduto
             // 
+            cmbProduto.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbProduto.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbProduto.FormattingEnabled = true;
             cmbProduto.Location = new Point(281, 150);
             cmbProduto.Name = "cmbProduto";
@@ -143,7 +145,8 @@
             // 
             // cmbCliente
             // 
-            cmbCliente.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
             cmbCliente.FormattingEnabled = true;
             cmbCliente.Location = new Point(281, 104);
             cmbCliente.Name = "cmbCliente";

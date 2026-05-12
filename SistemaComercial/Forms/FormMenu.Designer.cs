@@ -33,7 +33,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenu));
             btnContasReceber = new Button();
             btnContasPagar = new Button();
-            btnClientes = new Button();
+            btnFornecedor = new Button();
             label1 = new Label();
             btnProdutos = new Button();
             btnVendas = new Button();
@@ -41,6 +41,7 @@
             btnCaixa = new Button();
             timerFade = new System.Windows.Forms.Timer(components);
             panel1 = new Panel();
+            button1 = new Button();
             panel3 = new Panel();
             lblSistema = new Label();
             label2 = new Label();
@@ -96,26 +97,26 @@
             btnContasPagar.UseVisualStyleBackColor = false;
             btnContasPagar.Click += btnContasPagar_Click;
             // 
-            // btnClientes
+            // btnFornecedor
             // 
-            btnClientes.BackColor = Color.FromArgb(5, 1, 71);
-            btnClientes.Cursor = Cursors.Hand;
-            btnClientes.FlatAppearance.BorderSize = 0;
-            btnClientes.FlatStyle = FlatStyle.Flat;
-            btnClientes.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
-            btnClientes.ForeColor = Color.White;
-            btnClientes.Image = (Image)resources.GetObject("btnClientes.Image");
-            btnClientes.ImageAlign = ContentAlignment.MiddleLeft;
-            btnClientes.Location = new Point(0, 481);
-            btnClientes.Margin = new Padding(30);
-            btnClientes.Name = "btnClientes";
-            btnClientes.Padding = new Padding(16, 8, 16, 8);
-            btnClientes.Size = new Size(313, 65);
-            btnClientes.TabIndex = 5;
-            btnClientes.Text = "     CADASTRO DE CLIENTES";
-            btnClientes.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnClientes.UseVisualStyleBackColor = false;
-            btnClientes.Click += btnClientes_Click;
+            btnFornecedor.BackColor = Color.FromArgb(5, 1, 71);
+            btnFornecedor.Cursor = Cursors.Hand;
+            btnFornecedor.FlatAppearance.BorderSize = 0;
+            btnFornecedor.FlatStyle = FlatStyle.Flat;
+            btnFornecedor.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            btnFornecedor.ForeColor = Color.White;
+            btnFornecedor.Image = (Image)resources.GetObject("btnFornecedor.Image");
+            btnFornecedor.ImageAlign = ContentAlignment.MiddleLeft;
+            btnFornecedor.Location = new Point(0, 546);
+            btnFornecedor.Margin = new Padding(30);
+            btnFornecedor.Name = "btnFornecedor";
+            btnFornecedor.Padding = new Padding(16, 8, 16, 8);
+            btnFornecedor.Size = new Size(313, 65);
+            btnFornecedor.TabIndex = 5;
+            btnFornecedor.Text = "     CADASTRO DE FORNECEDORES";
+            btnFornecedor.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnFornecedor.UseVisualStyleBackColor = false;
+            btnFornecedor.Click += btnFornecedor_Click_1;
             // 
             // label1
             // 
@@ -213,13 +214,35 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 0, 43);
+            panel1.Controls.Add(button1);
             panel1.Controls.Add(panel3);
+            panel1.Controls.Add(btnFornecedor);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(313, 1003);
             panel1.TabIndex = 8;
             panel1.Paint += panel1_Paint;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.FromArgb(5, 1, 71);
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
+            button1.ForeColor = Color.White;
+            button1.Image = (Image)resources.GetObject("button1.Image");
+            button1.ImageAlign = ContentAlignment.MiddleLeft;
+            button1.Location = new Point(0, 481);
+            button1.Margin = new Padding(30);
+            button1.Name = "button1";
+            button1.Padding = new Padding(16, 8, 16, 8);
+            button1.Size = new Size(313, 65);
+            button1.TabIndex = 6;
+            button1.Text = "     CADASTRO DE CLIENTES";
+            button1.TextImageRelation = TextImageRelation.ImageBeforeText;
+            button1.UseVisualStyleBackColor = false;
             // 
             // panel3
             // 
@@ -323,7 +346,6 @@
             Controls.Add(panel2);
             Controls.Add(btnContasReceber);
             Controls.Add(btnContasPagar);
-            Controls.Add(btnClientes);
             Controls.Add(btnCaixa);
             Controls.Add(btnProdutos);
             Controls.Add(btnSair);
@@ -354,7 +376,7 @@
         private Button btnCaixa;
         private System.Windows.Forms.Timer timerFade;
         private Label label1;
-        private Button btnClientes;
+        private Button btnFornecedor;
         private Button btnContasReceber;
         private Button btnContasPagar;
         private Panel panel1;
@@ -368,5 +390,6 @@
         private Label lblData;
         private System.Windows.Forms.Timer timer2;
         private Label label3;
+        private Button button1;
     }
 }
