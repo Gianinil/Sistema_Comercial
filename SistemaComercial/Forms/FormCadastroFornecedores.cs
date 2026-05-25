@@ -60,5 +60,43 @@ namespace SistemaComercial
                 e.Graphics.FillRectangle(brush, this.ClientRectangle);
             }
         }
+
+        private void FormCadastroFornecedores_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(
+                    this.ActiveControl,
+                    true,
+                    true,
+                    true,
+                    true
+                );
+
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void FormCadastroFornecedores_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormCadastroFornecedores_Paint(object sender, PaintEventArgs e)
+        {
+            using (LinearGradientBrush brush = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.FromArgb(9, 3, 90),
+                Color.FromArgb(0, 0, 23),
+                90F))
+            {
+                e.Graphics.FillRectangle(brush, this.ClientRectangle);
+            }
+        }
     }
 }

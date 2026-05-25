@@ -7,12 +7,10 @@ using System.Drawing.Drawing2D;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
-using System.Drawing.Drawing2D;
 
 namespace SistemaComercial.Forms
 {
     public partial class FormMenu : Form
-
     {
         private GraphicsPath GetRoundedRectangle(Rectangle rect, int radius)
         {
@@ -31,12 +29,10 @@ namespace SistemaComercial.Forms
         int fadeAlpha = 0;
         System.Windows.Forms.Timer fadeTimer = new System.Windows.Forms.Timer();
 
-
         public FormMenu()
         {
             InitializeComponent();
             this.DoubleBuffered = true;
-
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -56,35 +52,25 @@ namespace SistemaComercial.Forms
             tela.ShowDialog();
         }
 
-
         [DllImport("Gdi32.dll", EntryPoint = "CreateRoundRectRgn")]
         private static extern IntPtr CreateRoundRectRgn(
-        int nLeftRect,
-        int nTopRect,
-        int nRightRect,
-        int nBottomRect,
-        int nWidthEllipse,
-        int nHeightEllipse
+            int nLeftRect,
+            int nTopRect,
+            int nRightRect,
+            int nBottomRect,
+            int nWidthEllipse,
+            int nHeightEllipse
         );
+
         private void btnCaixa_Click_1(object sender, EventArgs e)
         {
             FormCaixa tela = new FormCaixa();
             tela.ShowDialog();
         }
 
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void FormMenu_Paint(object sender, PaintEventArgs e)
-        {
-        }
-
-        private void btnFornecedor_Click(object sender, EventArgs e)
-        {
-
-        }
+        private void panelMenu_Paint(object sender, PaintEventArgs e) { }
+        private void FormMenu_Paint(object sender, PaintEventArgs e) { }
+        private void btnFornecedor_Click(object sender, EventArgs e) { }
 
         private void btnContasPagar_Click(object sender, EventArgs e)
         {
@@ -98,20 +84,60 @@ namespace SistemaComercial.Forms
             tela.Show();
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        private void panel2_Paint(object sender, PaintEventArgs e) { }
+        private void panel1_Paint(object sender, PaintEventArgs e) { }
 
         private void FormMenu_Load(object sender, EventArgs e)
         {
+            CentralizarConteudo();
+        }
 
+        protected override void OnResize(EventArgs e)
+        {
+            base.OnResize(e);
+            CentralizarConteudo();
+        }
+
+        private void CentralizarConteudo()
+        {
+            // Área disponível = tudo à direita da sidebar e abaixo do header
+            int areaX = panel1.Width;
+            int areaW = this.ClientSize.Width - panel1.Width;
+            int areaY = panel2.Height;
+            int areaH = this.ClientSize.Height - panel2.Height;
+
+            if (areaW <= 0 || areaH <= 0) return;
+
+            // Desliga AutoSize para controlar largura manualmente
+            label3.AutoSize = false;
+            lblHora.AutoSize = false;
+            lblData.AutoSize = false;
+
+            // Ocupa toda a largura disponível e centraliza o texto dentro
+            label3.Width = areaW;
+            lblHora.Width = areaW;
+            lblData.Width = areaW;
+
+            label3.TextAlign = ContentAlignment.MiddleCenter;
+            lblHora.TextAlign = ContentAlignment.MiddleCenter;
+            lblData.TextAlign = ContentAlignment.MiddleCenter;
+
+            // Altura suficiente para fonte grande não cortar
+            label3.Height = 140;
+            lblHora.Height = 140;
+            lblData.Height = 100;
+
+            // Posiciona verticalmente na área principal
+            label3.Location = new Point(areaX, areaY + (int)(areaH * 0.18));
+            lblHora.Location = new Point(areaX, areaY + (int)(areaH * 0.40));
+            lblData.Location = new Point(areaX, areaY + (int)(areaH * 0.63));
+
+            btnFornecedor.TextAlign = ContentAlignment.MiddleCenter;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             lblHora.Text = DateTime.Now.ToString("HH:mm:ss");
-
         }
 
         private void timer2_Tick(object sender, EventArgs e)
@@ -119,15 +145,28 @@ namespace SistemaComercial.Forms
             lblData.Text = DateTime.Now.ToString("dd/MM/yyyy");
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnFornecedor_Click_1(object sender, EventArgs e)
         {
             FormCadastroFornecedores tela = new FormCadastroFornecedores();
             tela.ShowDialog();
+        }
+
+        private void FormMenu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                this.Close();
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(this.ActiveControl, true, true, true, true);
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FormClientes tela = new FormClientes();
+            tela.Show();
         }
     }
 }

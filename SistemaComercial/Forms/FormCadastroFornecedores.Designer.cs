@@ -166,11 +166,15 @@
             Controls.Add(label1);
             Controls.Add(txtNome);
             Controls.Add(panel1);
+            KeyPreview = true;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FormCadastroFornecedores";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormCadastroFornecedores";
+            Load += FormCadastroFornecedores_Load;
+            Paint += FormCadastroFornecedores_Paint;
+            KeyDown += FormCadastroFornecedores_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }

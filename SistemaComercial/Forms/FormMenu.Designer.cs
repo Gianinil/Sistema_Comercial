@@ -2,16 +2,8 @@
 {
     partial class FormMenu
     {
-
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -23,10 +15,6 @@
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
@@ -59,6 +47,7 @@
             // 
             // btnContasReceber
             // 
+            btnContasReceber.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnContasReceber.BackColor = Color.FromArgb(5, 1, 71);
             btnContasReceber.Cursor = Cursors.Hand;
             btnContasReceber.FlatAppearance.BorderSize = 0;
@@ -79,6 +68,7 @@
             // 
             // btnContasPagar
             // 
+            btnContasPagar.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnContasPagar.BackColor = Color.FromArgb(5, 1, 71);
             btnContasPagar.Cursor = Cursors.Hand;
             btnContasPagar.FlatAppearance.BorderSize = 0;
@@ -99,6 +89,7 @@
             // 
             // btnFornecedor
             // 
+            btnFornecedor.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnFornecedor.BackColor = Color.FromArgb(5, 1, 71);
             btnFornecedor.Cursor = Cursors.Hand;
             btnFornecedor.FlatAppearance.BorderSize = 0;
@@ -131,6 +122,7 @@
             // 
             // btnProdutos
             // 
+            btnProdutos.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnProdutos.BackColor = Color.FromArgb(5, 1, 71);
             btnProdutos.Cursor = Cursors.Hand;
             btnProdutos.FlatAppearance.BorderSize = 0;
@@ -151,6 +143,7 @@
             // 
             // btnVendas
             // 
+            btnVendas.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnVendas.BackColor = Color.FromArgb(5, 1, 71);
             btnVendas.Cursor = Cursors.Hand;
             btnVendas.FlatAppearance.BorderSize = 0;
@@ -171,6 +164,7 @@
             // 
             // btnSair
             // 
+            btnSair.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             btnSair.BackColor = Color.FromArgb(5, 1, 71);
             btnSair.Cursor = Cursors.Hand;
             btnSair.FlatAppearance.BorderSize = 0;
@@ -178,7 +172,7 @@
             btnSair.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold);
             btnSair.ForeColor = Color.White;
             btnSair.ImageAlign = ContentAlignment.MiddleLeft;
-            btnSair.Location = new Point(0, 898);
+            btnSair.Location = new Point(0, 156);
             btnSair.Margin = new Padding(30);
             btnSair.Name = "btnSair";
             btnSair.Size = new Size(313, 65);
@@ -189,6 +183,7 @@
             // 
             // btnCaixa
             // 
+            btnCaixa.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnCaixa.BackColor = Color.FromArgb(5, 1, 71);
             btnCaixa.Cursor = Cursors.Hand;
             btnCaixa.FlatAppearance.BorderSize = 0;
@@ -214,18 +209,25 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(0, 0, 43);
+            panel1.Controls.Add(btnSair);
             panel1.Controls.Add(button1);
-            panel1.Controls.Add(panel3);
             panel1.Controls.Add(btnFornecedor);
+            panel1.Controls.Add(btnContasPagar);
+            panel1.Controls.Add(btnContasReceber);
+            panel1.Controls.Add(btnCaixa);
+            panel1.Controls.Add(btnVendas);
+            panel1.Controls.Add(btnProdutos);
+            panel1.Controls.Add(panel3);
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(313, 1003);
+            panel1.Size = new Size(313, 261);
             panel1.TabIndex = 8;
             panel1.Paint += panel1_Paint;
             // 
             // button1
             // 
+            button1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             button1.BackColor = Color.FromArgb(5, 1, 71);
             button1.Cursor = Cursors.Hand;
             button1.FlatAppearance.BorderSize = 0;
@@ -243,6 +245,7 @@
             button1.Text = "     CADASTRO DE CLIENTES";
             button1.TextImageRelation = TextImageRelation.ImageBeforeText;
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // panel3
             // 
@@ -271,7 +274,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ButtonHighlight;
-            label2.Location = new Point(1249, 40);
+            label2.Location = new Point(-217, 40);
             label2.Name = "label2";
             label2.Size = new Size(205, 21);
             label2.TabIndex = 1;
@@ -285,12 +288,13 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(313, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1466, 100);
+            panel2.Size = new Size(0, 100);
             panel2.TabIndex = 9;
             panel2.Paint += panel2_Paint;
             // 
             // lblHora
             // 
+            lblHora.Anchor = AnchorStyles.None;
             lblHora.AutoSize = true;
             lblHora.Font = new Font("Segoe UI", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblHora.ForeColor = SystemColors.ControlDarkDark;
@@ -308,6 +312,7 @@
             // 
             // lblData
             // 
+            lblData.Anchor = AnchorStyles.None;
             lblData.AutoSize = true;
             lblData.Font = new Font("Segoe UI", 48F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblData.ForeColor = SystemColors.ControlDarkDark;
@@ -325,6 +330,7 @@
             // 
             // label3
             // 
+            label3.Anchor = AnchorStyles.None;
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 72F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = SystemColors.ControlDarkDark;
@@ -339,27 +345,21 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ScrollBar;
-            ClientSize = new Size(1779, 1003);
+            ClientSize = new Size(284, 261);
             Controls.Add(label3);
             Controls.Add(lblData);
             Controls.Add(lblHora);
             Controls.Add(panel2);
-            Controls.Add(btnContasReceber);
-            Controls.Add(btnContasPagar);
-            Controls.Add(btnCaixa);
-            Controls.Add(btnProdutos);
-            Controls.Add(btnSair);
-            Controls.Add(btnVendas);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            MaximizeBox = false;
+            KeyPreview = true;
             Name = "FormMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema Comercial";
             WindowState = FormWindowState.Maximized;
             Load += FormMenu_Load;
             Paint += FormMenu_Paint;
+            KeyDown += FormMenu_KeyDown;
             panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
@@ -370,6 +370,7 @@
         }
 
         #endregion
+
         private Button btnProdutos;
         private Button btnVendas;
         private Button btnSair;

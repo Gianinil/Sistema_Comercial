@@ -109,9 +109,11 @@
             BackColor = Color.FromArgb(0, 0, 43);
             Controls.Add(panelLogin);
             DoubleBuffered = true;
+            KeyPreview = true;
             MaximizeBox = false;
             Name = "FormLogin";
             Load += FormLogin_Load;
+            KeyDown += FormLogin_KeyDown;
             panelLogin.ResumeLayout(false);
             panelLogin.PerformLayout();
             ResumeLayout(false);

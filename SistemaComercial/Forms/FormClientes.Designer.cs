@@ -169,10 +169,13 @@
             Controls.Add(label1);
             Controls.Add(txtNome);
             Controls.Add(panel1);
+            KeyPreview = true;
             Name = "FormClientes";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FormClientes";
+            Load += FormClientes_Load;
             Paint += FormClientes_Paint;
+            KeyDown += FormClientes_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }

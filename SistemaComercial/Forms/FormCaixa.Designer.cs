@@ -98,11 +98,13 @@
             Controls.Add(lblEntradas);
             Controls.Add(dgvCaixa);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             MaximizeBox = false;
             Name = "FormCaixa";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema Comercial";
             Load += FormCaixa_Load;
+            KeyDown += FormCaixa_KeyDown;
             ((System.ComponentModel.ISupportInitialize)dgvCaixa).EndInit();
             ResumeLayout(false);
             PerformLayout();

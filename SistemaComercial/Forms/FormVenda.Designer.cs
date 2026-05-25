@@ -191,12 +191,14 @@
             Controls.Add(cmbProduto);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             MaximizeBox = false;
             Name = "FormVenda";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema Comercial";
             Load += FormVenda_Load;
             Paint += FormVenda_Paint;
+            KeyDown += FormVenda_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }

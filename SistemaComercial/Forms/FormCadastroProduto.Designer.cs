@@ -175,12 +175,14 @@
             Controls.Add(Nome);
             Controls.Add(panel1);
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             MaximizeBox = false;
             Name = "FormCadastroProduto";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema Comercial";
             Load += FormCadastroProduto_Load;
             Paint += FormCadastroProduto_Paint;
+            KeyDown += FormCadastroProduto_KeyDown;
             ResumeLayout(false);
             PerformLayout();
         }

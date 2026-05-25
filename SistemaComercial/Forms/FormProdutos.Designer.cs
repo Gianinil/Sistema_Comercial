@@ -158,11 +158,13 @@
             Controls.Add(dgvProdutos);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Icon = (Icon)resources.GetObject("$this.Icon");
+            KeyPreview = true;
             MaximizeBox = false;
             Name = "FormProdutos";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema Comercial";
             Load += FormProdutos_Load;
+            KeyDown += FormProdutos_KeyDown;
             ((System.ComponentModel.ISupportInitialize)dgvProdutos).EndInit();
             panelBotoes.ResumeLayout(false);
             ResumeLayout(false);

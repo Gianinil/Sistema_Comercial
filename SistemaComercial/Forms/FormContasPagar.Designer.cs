@@ -140,6 +140,7 @@
             dgvPagar.MultiSelect = false;
             dgvPagar.Name = "dgvPagar";
             dgvPagar.ReadOnly = true;
+            dgvPagar.RightToLeft = RightToLeft.No;
             dgvPagar.RowHeadersVisible = false;
             dgvPagar.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvPagar.Size = new Size(1269, 542);
@@ -177,9 +178,11 @@
             Controls.Add(label2);
             Controls.Add(txtFornecedor);
             Controls.Add(label1);
+            KeyPreview = true;
             Name = "FormContasPagar";
             Text = "FormContasPagar";
             Load += FormContasPagar_Load;
+            KeyDown += FormContasPagar_KeyDown;
             ((System.ComponentModel.ISupportInitialize)dgvPagar).EndInit();
             ResumeLayout(false);
             PerformLayout();

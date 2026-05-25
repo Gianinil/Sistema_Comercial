@@ -169,10 +169,12 @@
             Controls.Add(label1);
             Controls.Add(txtValor);
             Controls.Add(txtCliente);
+            KeyPreview = true;
             MinimizeBox = false;
             Name = "FormContasReceber";
             Text = "FormContasReceber";
             Load += dgvReceber_Load;
+            KeyDown += FormContasReceber_KeyDown;
             ((System.ComponentModel.ISupportInitialize)dgvReceber).EndInit();
             ResumeLayout(false);
             PerformLayout();

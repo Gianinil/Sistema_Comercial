@@ -221,5 +221,26 @@ namespace SistemaComercial
         {
 
         }
+
+        private void FormVenda_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(
+                    this.ActiveControl,
+                    true,
+                    true,
+                    true,
+                    true
+                );
+
+                e.SuppressKeyPress = true;
+            }
+        }
     }
 }
