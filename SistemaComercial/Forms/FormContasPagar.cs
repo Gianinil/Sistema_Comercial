@@ -35,6 +35,7 @@ namespace SistemaComercial
         {
             Carregar();
 
+
             cbStatus.Items.Add("Pendente");
             cbStatus.Items.Add("Pago");
         }
@@ -48,7 +49,7 @@ namespace SistemaComercial
         {
             try
             {
-                if (string.IsNullOrEmpty(txtFornecedor.Text))
+                if (string.IsNullOrEmpty(cbFornecedor.Text))
                 {
                     MessageBox.Show("Informe o fornecedor.");
                     return;
@@ -79,7 +80,7 @@ namespace SistemaComercial
                 VALUES (@f, @v, @d, @s)";
 
                     var cmd = new SqliteCommand(sql, conn);
-                    cmd.Parameters.AddWithValue("@f", txtFornecedor.Text);
+                    cmd.Parameters.AddWithValue("@f", cbFornecedor.Text);
                     cmd.Parameters.AddWithValue("@v", valor);
                     cmd.Parameters.AddWithValue("@d", data);
                     cmd.Parameters.AddWithValue("@s", status);
@@ -95,7 +96,7 @@ namespace SistemaComercial
                         var cmdCaixa = new SqliteCommand(sqlCaixa, conn);
                         cmdCaixa.Parameters.AddWithValue("@tipo", "Saida");
                         cmdCaixa.Parameters.AddWithValue("@valor", valor);
-                        cmdCaixa.Parameters.AddWithValue("@desc", "Pagamento - " + txtFornecedor.Text);
+                        cmdCaixa.Parameters.AddWithValue("@desc", "Pagamento - " + cbFornecedor.Text);
                         cmdCaixa.Parameters.AddWithValue("@data", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                         cmdCaixa.Parameters.AddWithValue("@metodo", "Manual");
                         cmdCaixa.ExecuteNonQuery();
@@ -142,7 +143,7 @@ namespace SistemaComercial
                     cmdUpdate.Parameters.AddWithValue("@id", id);
                     cmdUpdate.ExecuteNonQuery();
 
-                    // 🔥 REGISTRA SAÍDA NO CAIXA
+                    //  REGISTRA SAÍDA NO CAIXA
                     string sqlCaixa = @"INSERT INTO Caixa 
             (Tipo, Valor, Descricao, DataMovimento, MetodoPagamento)
             VALUES (@tipo, @valor, @desc, @data, @metodo)";

@@ -30,7 +30,6 @@
         {
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             label1 = new Label();
-            txtFornecedor = new TextBox();
             txtValor = new TextBox();
             label2 = new Label();
             label3 = new Label();
@@ -40,6 +39,7 @@
             btnSalvar = new Button();
             dgvPagar = new DataGridView();
             btnPagar = new Button();
+            cbFornecedor = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dgvPagar).BeginInit();
             SuspendLayout();
             // 
@@ -51,13 +51,6 @@
             label1.Size = new Size(73, 15);
             label1.TabIndex = 0;
             label1.Text = "Fornecedor: ";
-            // 
-            // txtFornecedor
-            // 
-            txtFornecedor.Location = new Point(60, 566);
-            txtFornecedor.Name = "txtFornecedor";
-            txtFornecedor.Size = new Size(214, 23);
-            txtFornecedor.TabIndex = 1;
             // 
             // txtValor
             // 
@@ -162,11 +155,20 @@
             btnPagar.UseVisualStyleBackColor = false;
             btnPagar.Click += btnPagar_Click;
             // 
+            // cbFornecedor
+            // 
+            cbFornecedor.FormattingEnabled = true;
+            cbFornecedor.Location = new Point(60, 566);
+            cbFornecedor.Name = "cbFornecedor";
+            cbFornecedor.Size = new Size(121, 23);
+            cbFornecedor.TabIndex = 11;
+            // 
             // FormContasPagar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1269, 663);
+            Controls.Add(cbFornecedor);
             Controls.Add(btnPagar);
             Controls.Add(dgvPagar);
             Controls.Add(btnSalvar);
@@ -176,7 +178,6 @@
             Controls.Add(label3);
             Controls.Add(txtValor);
             Controls.Add(label2);
-            Controls.Add(txtFornecedor);
             Controls.Add(label1);
             KeyPreview = true;
             Name = "FormContasPagar";
@@ -191,7 +192,6 @@
         #endregion
 
         private Label label1;
-        private TextBox txtFornecedor;
         private TextBox txtValor;
         private Label label2;
         private Label label3;
@@ -201,5 +201,6 @@
         private Button btnSalvar;
         private DataGridView dgvPagar;
         private Button btnPagar;
+        private ComboBox cbFornecedor;
     }
 }

@@ -67,15 +67,16 @@ public class Database
 
             //FORNECEDOR
             string sqlFornecedor = @"
-            CREATE TABLE IF NOT EXISTS Fornecedor(
-            ID INTEGER PRIMARY KEY AUTOINCREMENT,
-            Nome TEXT NOT NULL,
-            Cnpj TEXT,
-            Telefone TEXT,
-            Email TEXT
-            Endereco TEXT
+            CREATE TABLE IF NOT EXISTS Fornecedor (
+                Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                Nome TEXT NOT NULL,
+                Cnpj TEXT,
+                Telefone TEXT,
+                Email TEXT,
+                Endereco TEXT
             
             );";
+            new SqliteCommand(sqlFornecedor, conn).ExecuteNonQuery();
 
             // CONTAS A RECEBER
             string sqlReceber = @"
