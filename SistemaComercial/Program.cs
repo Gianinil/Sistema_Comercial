@@ -8,11 +8,9 @@ namespace SistemaComercial
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
-            ApplicationConfiguration.Initialize();
-            Database.CriarTabela();
-            Application.Run(new FormLogin());
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new FormSplash());
         }
     }
 }

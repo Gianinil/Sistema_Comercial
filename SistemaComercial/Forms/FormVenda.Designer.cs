@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVenda));
             cmbProduto = new ComboBox();
             txtQuantidade = new TextBox();
@@ -53,6 +55,9 @@
             // 
             cmbProduto.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbProduto.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cmbProduto.BackColor = Color.White;
+            cmbProduto.FlatStyle = FlatStyle.Flat;
+            cmbProduto.ForeColor = Color.Black;
             cmbProduto.FormattingEnabled = true;
             cmbProduto.Location = new Point(24, 139);
             cmbProduto.Name = "cmbProduto";
@@ -61,6 +66,8 @@
             // 
             // txtQuantidade
             // 
+            txtQuantidade.BackColor = Color.White;
+            txtQuantidade.ForeColor = Color.Black;
             txtQuantidade.Location = new Point(24, 221);
             txtQuantidade.Name = "txtQuantidade";
             txtQuantidade.Size = new Size(232, 23);
@@ -68,15 +75,15 @@
             // 
             // btnVender
             // 
-            btnVender.BackColor = Color.FromArgb(5, 1, 71);
+            btnVender.BackColor = Color.FromArgb(9, 3, 90);
             btnVender.Cursor = Cursors.Hand;
             btnVender.FlatAppearance.BorderSize = 0;
             btnVender.FlatStyle = FlatStyle.Flat;
             btnVender.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            btnVender.ForeColor = SystemColors.ControlLightLight;
+            btnVender.ForeColor = Color.White;
             btnVender.Location = new Point(11, 404);
             btnVender.Name = "btnVender";
-            btnVender.Size = new Size(120, 45);
+            btnVender.Size = new Size(120, 42);
             btnVender.TabIndex = 2;
             btnVender.Text = "Adicionar ao carrinho";
             btnVender.UseVisualStyleBackColor = false;
@@ -84,15 +91,15 @@
             // 
             // btnCancelar
             // 
-            btnCancelar.BackColor = Color.FromArgb(5, 1, 71);
+            btnCancelar.BackColor = Color.FromArgb(9, 3, 90);
             btnCancelar.Cursor = Cursors.Hand;
             btnCancelar.FlatAppearance.BorderSize = 0;
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
-            btnCancelar.ForeColor = SystemColors.ControlLightLight;
+            btnCancelar.ForeColor = Color.White;
             btnCancelar.Location = new Point(149, 404);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(120, 45);
+            btnCancelar.Size = new Size(120, 42);
             btnCancelar.TabIndex = 3;
             btnCancelar.Text = "Cancelar";
             btnCancelar.UseVisualStyleBackColor = false;
@@ -108,8 +115,9 @@
             // Produto
             // 
             Produto.AutoSize = true;
-            Produto.BackColor = SystemColors.Control;
+            Produto.BackColor = Color.Transparent;
             Produto.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            Produto.ForeColor = Color.White;
             Produto.Location = new Point(24, 119);
             Produto.Name = "Produto";
             Produto.Size = new Size(58, 17);
@@ -119,8 +127,9 @@
             // Quantidade
             // 
             Quantidade.AutoSize = true;
-            Quantidade.BackColor = SystemColors.Control;
+            Quantidade.BackColor = Color.Transparent;
             Quantidade.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold);
+            Quantidade.ForeColor = Color.White;
             Quantidade.Location = new Point(24, 201);
             Quantidade.Name = "Quantidade";
             Quantidade.Size = new Size(79, 17);
@@ -130,8 +139,9 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.BackColor = SystemColors.Control;
+            label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.White;
             label1.Location = new Point(24, 292);
             label1.Name = "label1";
             label1.Size = new Size(149, 17);
@@ -140,7 +150,10 @@
             // 
             // cbMetodoPagamento
             // 
+            cbMetodoPagamento.BackColor = Color.White;
             cbMetodoPagamento.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbMetodoPagamento.FlatStyle = FlatStyle.Flat;
+            cbMetodoPagamento.ForeColor = Color.Black;
             cbMetodoPagamento.FormattingEnabled = true;
             cbMetodoPagamento.Location = new Point(24, 312);
             cbMetodoPagamento.Name = "cbMetodoPagamento";
@@ -152,6 +165,9 @@
             // 
             cmbCliente.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbCliente.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cmbCliente.BackColor = Color.White;
+            cmbCliente.FlatStyle = FlatStyle.Flat;
+            cmbCliente.ForeColor = Color.Black;
             cmbCliente.FormattingEnabled = true;
             cmbCliente.Location = new Point(24, 58);
             cmbCliente.Name = "cmbCliente";
@@ -161,8 +177,9 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.BackColor = SystemColors.Control;
+            label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.White;
             label2.Location = new Point(24, 38);
             label2.Name = "label2";
             label2.Size = new Size(49, 17);
@@ -171,7 +188,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = SystemColors.Control;
+            panel1.BackColor = Color.FromArgb(5, 1, 71);
             panel1.Controls.Add(btnVender);
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(txtQuantidade);
@@ -191,7 +208,27 @@
             // 
             dgvCarrinho.AllowUserToAddRows = false;
             dgvCarrinho.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvCarrinho.BackgroundColor = SystemColors.ActiveBorder;
+            dgvCarrinho.BorderStyle = BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvCarrinho.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvCarrinho.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = Color.Black;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dgvCarrinho.DefaultCellStyle = dataGridViewCellStyle2;
+            dgvCarrinho.EnableHeadersVisualStyles = false;
+            dgvCarrinho.GridColor = SystemColors.MenuText;
             dgvCarrinho.Location = new Point(320, 20);
             dgvCarrinho.Name = "dgvCarrinho";
             dgvCarrinho.ReadOnly = true;
@@ -201,10 +238,11 @@
             // 
             // btnFinalizar
             // 
-            btnFinalizar.BackColor = Color.FromArgb(5, 1, 71);
+            btnFinalizar.BackColor = Color.FromArgb(9, 3, 90);
+            btnFinalizar.FlatAppearance.BorderSize = 0;
             btnFinalizar.FlatStyle = FlatStyle.Flat;
             btnFinalizar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            btnFinalizar.ForeColor = SystemColors.Control;
+            btnFinalizar.ForeColor = Color.White;
             btnFinalizar.Location = new Point(320, 460);
             btnFinalizar.Name = "btnFinalizar";
             btnFinalizar.Size = new Size(120, 45);
@@ -215,10 +253,11 @@
             // 
             // btnRemoverItem
             // 
-            btnRemoverItem.BackColor = Color.FromArgb(5, 1, 71);
+            btnRemoverItem.BackColor = Color.FromArgb(9, 3, 90);
+            btnRemoverItem.FlatAppearance.BorderSize = 0;
             btnRemoverItem.FlatStyle = FlatStyle.Flat;
             btnRemoverItem.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold);
-            btnRemoverItem.ForeColor = SystemColors.Control;
+            btnRemoverItem.ForeColor = Color.White;
             btnRemoverItem.Location = new Point(540, 460);
             btnRemoverItem.Name = "btnRemoverItem";
             btnRemoverItem.Size = new Size(120, 45);
@@ -230,7 +269,9 @@
             // lblTotal
             // 
             lblTotal.AutoSize = true;
+            lblTotal.BackColor = Color.Transparent;
             lblTotal.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTotal.ForeColor = Color.White;
             lblTotal.Location = new Point(320, 415);
             lblTotal.Name = "lblTotal";
             lblTotal.Size = new Size(170, 32);
@@ -241,7 +282,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(224, 224, 224);
+            BackColor = Color.FromArgb(0, 0, 23);
             ClientSize = new Size(884, 561);
             Controls.Add(lblTotal);
             Controls.Add(btnRemoverItem);

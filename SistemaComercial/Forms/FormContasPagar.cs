@@ -31,10 +31,23 @@ namespace SistemaComercial
                 dgvPagar.DataSource = dt;
             }
         }
+        private void CarregarFornecedores()
+        {
+            using (var conn = Database.GetConnection())
+            {
+                conn.Open();
+                var cmd = new SqliteCommand("SELECT Nome FROM Fornecedor ORDER BY Nome", conn);
+                var reader = cmd.ExecuteReader();
+
+                cbFornecedor.Items.Clear();
+                while (reader.Read())
+                    cbFornecedor.Items.Add(reader.GetString(0));
+            }
+        }
         private void FormContasPagar_Load(object sender, EventArgs e)
         {
             Carregar();
-
+            CarregarFornecedores();
 
             cbStatus.Items.Add("Pendente");
             cbStatus.Items.Add("Pago");
@@ -90,16 +103,16 @@ namespace SistemaComercial
                     if (status == "Pago")
                     {
                         string sqlCaixa = @"INSERT INTO Caixa 
-                (Tipo, Valor, Descricao, DataMovimento, MetodoPagamento)
-                VALUES (@tipo, @valor, @desc, @data, @metodo)";
+                        (Tipo, Valor, Descricao, DataMovimento, MetodoPagamento, Fornecedor)
+                        VALUES (@tipo, @valor, @desc, @data, @metodo, @fornecedor)";
 
                         var cmdCaixa = new SqliteCommand(sqlCaixa, conn);
                         cmdCaixa.Parameters.AddWithValue("@tipo", "Saida");
                         cmdCaixa.Parameters.AddWithValue("@valor", valor);
-                        cmdCaixa.Parameters.AddWithValue("@desc", "Pagamento - " + cbFornecedor.Text);
+                        cmdCaixa.Parameters.AddWithValue("@desc", "Pagamento a fornecedor");
                         cmdCaixa.Parameters.AddWithValue("@data", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                         cmdCaixa.Parameters.AddWithValue("@metodo", "Manual");
-                        cmdCaixa.ExecuteNonQuery();
+                        cmdCaixa.Parameters.AddWithValue("@fornecedor", cbFornecedor.Text);
                     }
                 }
 
@@ -145,20 +158,16 @@ namespace SistemaComercial
 
                     //  REGISTRA SAÍDA NO CAIXA
                     string sqlCaixa = @"INSERT INTO Caixa 
-            (Tipo, Valor, Descricao, DataMovimento, MetodoPagamento)
-            VALUES (@tipo, @valor, @desc, @data, @metodo)";
+    (Tipo, Valor, Descricao, DataMovimento, MetodoPagamento, Fornecedor)
+    VALUES (@tipo, @valor, @desc, @data, @metodo, @fornecedor)";
 
                     var cmdCaixa = new SqliteCommand(sqlCaixa, conn);
                     cmdCaixa.Parameters.AddWithValue("@tipo", "Saida");
                     cmdCaixa.Parameters.AddWithValue("@valor", valor);
-                    cmdCaixa.Parameters.AddWithValue("@desc", "Pagamento - " + fornecedor);
+                    cmdCaixa.Parameters.AddWithValue("@desc", "Pagamento a fornecedor");
                     cmdCaixa.Parameters.AddWithValue("@data", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
                     cmdCaixa.Parameters.AddWithValue("@metodo", "Manual");
-                    cmdCaixa.ExecuteNonQuery();
-                    string sqlDelete = "DELETE FROM ContasPagar WHERE Id = @id";
-                    var cmdDelete = new SqliteCommand(sqlDelete, conn);
-                    cmdDelete.Parameters.AddWithValue("@id", id);
-                    cmdDelete.ExecuteNonQuery();
+                    cmdCaixa.Parameters.AddWithValue("@fornecedor", fornecedor);
                 }
 
                 MessageBox.Show("Conta paga com sucesso!");
